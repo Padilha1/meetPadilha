@@ -12,9 +12,9 @@
     /* primary/main color */
     --clr-primary-5: hsl(286, 38%, 45%);
     /* lighter shades of primary color */
-    --clr-primary-6: hsl(205, 89%, 70%);
-    --clr-primary-7: hsl(205, 90%, 76%);
-    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-6: hsl(269, 30%, 27%);
+    --clr-primary-7: hsl(269, 40%, 76%);
+    --clr-primary-8: hsl(269, 24%, 49%);
     --clr-primary-9: hsl(205, 90%, 88%);
     --clr-primary-10: hsl(205, 100%, 96%);
     /* darkest grey - used for headings */
@@ -23,8 +23,6 @@
     --clr-grey-3: hsl(276, 68%, 25%);
     --clr-grey-4: hsl(264, 39%, 31%);
     /* grey used for paragraphs */
-    --clr-grey-5: hsl(210, 22%, 49%);
-    --clr-grey-6: hsl(209, 23%, 60%);
     --clr-grey-7: hsl(211, 27%, 70%);
     --clr-grey-8: hsl(210, 31%, 80%);
     --clr-grey-9: hsl(212, 33%, 89%);
@@ -32,8 +30,6 @@
     --clr-white: rgb(244, 220, 247);
     --clr-red-dark: hsl(360, 67%, 44%);
     --clr-red-light: hsl(360, 71%, 66%);
-    --clr-green-dark: hsl(125, 67%, 44%);
-    --clr-green-light: hsl(125, 71%, 66%);
     --clr-black: #222;
     --ff-primary: 'Roboto', sans-serif;
     --ff-secondary: 'Open Sans', sans-serif;
@@ -118,7 +114,7 @@ nav {
   }
   @media screen and (min-width: 800px) {
     .nav-center {
-      max-width: 1170px;
+      max-width: 1150px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -154,8 +150,25 @@ nav {
     .social-icons a:hover {
       color: var(--clr-primary-7);
     }
+
+  
 }
 
+@media  screen and (width: 375px) {
+  .about .mini-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .skill {
+    overflow: auto;
+  }
+  .skill .boxes{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /* =============== 
 Video
@@ -181,6 +194,7 @@ Video
 }
 
 header {
+  min-width: 100vw;
   min-height: 100vh;
   position: relative;
   display: grid;
@@ -190,6 +204,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  aspect-ratio: 16/9;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -246,3 +261,154 @@ header::after {
   background: rgba(0, 0, 0, 0.7);
   z-index: -1;
 }
+
+/* =============== 
+ABOUT Section
+===============
+*/
+.container {
+  width: 100vw;
+}
+
+.container .mini-container{
+  display: flex;
+  font-size: 15px;
+}
+.container .timing{
+  background-image: url(imgs/bakcground1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: clamp(375px, 50%, 800px);
+  padding:40px 20px;
+
+  text-align: center;
+  color:var(--clr-white);
+}
+.container .timing h3 {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-primary);
+  font-size: 30px;
+  margin: 0 auto 30px auto;
+}
+.container .timing .text {
+  margin: 10px 0;
+}
+.container .timing .text:after {
+  content: '•';
+  font-size: 20px;
+  display:block;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+.container .timing .text h4{
+  color: var(--color-primary-light);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container .timing span{
+  color: white;
+  font-size: 14px;
+  display: block;
+}
+
+.container .experience {
+  background-image: url(imgs/background5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--clr-white);
+
+  min-width: 375px;
+  max-width: 80%;
+  text-align: center;
+  padding: 50px 0;
+  
+}
+
+.container .experience h2 {
+  font-weight: 400;
+  font-size: 2em;
+  height: 60px;
+}
+
+
+.container .experience .text {
+  padding: 40px;
+}
+
+.container .experience .text .resume .p:after {
+  content: '•';
+  font-size: 20px;
+  display:block;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
+
+.container .experience .text p {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.about .timing .icon_cut {
+    width: 100px;
+}
+/* =============== 
+SKILLS Section
+===============
+*/
+
+ .skill .container{
+  background-color: var(--clr-primary-7);
+  padding: 60px 0;
+  text-align: center;
+  
+}
+
+.skill h2 {
+  color: var(--color-secundary);
+  font-weight: 400;
+  font-size: 55px;
+  height: 150px;
+}
+
+.skill h2:after {
+  display: flex;
+  justify-content: center;
+  content: '❦';
+  
+}
+
+.skill .boxes {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1900px;
+}
+
+.skill .boxes .tools {
+  width: 90px;
+}
+
+.skill .box {
+  border: 3px solid var(--clr-primary-2);
+  border-radius: 13px;
+  padding: 20px 30px 40px;
+  margin: 30px ;
+
+}
+
+.skill .box h4 {
+  color: var(--color-secundary);
+  margin-top: 10px;
+  font-size:1.5em;
+}
+
+.skill .box p {
+  margin-top:10px;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+
