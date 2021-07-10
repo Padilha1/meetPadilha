@@ -211,7 +211,7 @@ header {
   z-index: -2;
 }
 h1 {
-  color: var(--clr-white);
+  color: var(--clr-grey-9);
 }
 /* switch button */
 
@@ -359,7 +359,6 @@ ABOUT Section
 SKILLS Section
 ===============
 */
-
  .skill .container{
   background-color: var(--clr-primary-7);
   padding: 60px 0;
@@ -386,11 +385,9 @@ SKILLS Section
   justify-content: space-between;
   max-width: 1900px;
 }
-
 .skill .boxes .tools {
   width: 90px;
 }
-
 .skill .box {
   border: 3px solid var(--clr-primary-2);
   border-radius: 13px;
@@ -398,13 +395,11 @@ SKILLS Section
   margin: 30px ;
 
 }
-
 .skill .box h4 {
   color: var(--color-secundary);
   margin-top: 10px;
   font-size:1.5em;
 }
-
 .skill .box p {
   margin-top:10px;
   font-size: 16px;
