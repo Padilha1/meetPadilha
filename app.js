@@ -9,16 +9,11 @@
 //  NAVBAR FUNCTION
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
+// const icons = document.querySelector(".social-icons");
 
 navToggle.addEventListener("click", function(){
-    //console.log(links.classList);
-    //console.log(links.classList.contains('random'));
-    /*if (links.classList.contains("show-links")){
-        links.classList.remove("show-links");
-    } else {
-        links.classList.add("show-links");
-    } */
     links.classList.toggle("show-links");
+    // icons.classList.toggle("show-links");
 });
 
 // VIDEO FUNCTION
@@ -48,3 +43,15 @@ const preloader = document.querySelector(".preloader");
 window.addEventListener("load", function(){
     preloader.classList.add("hide-preloader");
 })
+
+
+// SCROLL BAR 
+
+const progress = document.getElementById('progressbar');
+const totalHeight = document.body.scrollHeight - window.innerHeight;
+
+window.onscroll = function (){
+    const progressHeight = (window.pageYOffset / totalHeight) * 100;
+    progress.style.height = progressHeight + "%";
+}
+

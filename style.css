@@ -15,8 +15,8 @@
     --clr-primary-6: hsl(269, 30%, 27%);
     --clr-primary-7: hsl(269, 40%, 76%);
     --clr-primary-8: hsl(269, 24%, 49%);
-    --clr-primary-9: hsl(205, 90%, 88%);
-    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-primary-9: hsl(269, 23%, 62%);
+    --clr-primary-10: hsl(275, 71%, 89%);
     /* darkest grey - used for headings */
     --clr-grey-1: hsl(261, 58%, 24%);
     --clr-grey-2: hsl(261, 49%, 27%);
@@ -42,6 +42,9 @@
     --fixed-width: 620px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 *,
 ::after,
 ::before {
@@ -52,14 +55,16 @@
 
 body {
     font-family: var(--ff-secondary);
-    background: var(--clr-grey-10);
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
 }
 
+/***************************
+        NAVBAR
+***************************/
 nav {
-    background: var(--clr-white);
+    background: var(--clr-primary-7);
     box-shadow: var(--light-shadow);
   }
   .nav-header {
@@ -67,6 +72,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background: transparent;
   }
   .nav-toggle {
     font-size: 1.5rem;
@@ -112,6 +118,9 @@ nav {
   .show-links {
     height: 10rem;
   }
+/***************************
+        RESPONSIVENESS
+***************************/
   @media screen and (min-width: 800px) {
     .nav-center {
       max-width: 1150px;
@@ -154,13 +163,12 @@ nav {
   
 }
 
-@media  screen and (width: 375px) {
+@media  screen and (max-width: 375px) {
   .about .mini-container{
     display: flex;
     flex-direction: column;
   }
 
-  
   .skill {
     overflow: auto;
   }
@@ -211,7 +219,7 @@ header {
   z-index: -2;
 }
 h1 {
-  color: var(--clr-grey-9);
+  color: var(--clr-primary-7);
 }
 /* switch button */
 
@@ -278,7 +286,6 @@ ABOUT Section
   background-image: url(imgs/blue-orange.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-
   padding:40px 20px;
   
   text-align: center;
@@ -321,7 +328,7 @@ ABOUT Section
 
 
   min-width: 375px;
-  max-width: 80%;
+  max-width: 100%;
   text-align: center;
   padding: 50px 0;
   
@@ -356,14 +363,13 @@ ABOUT Section
     width: 100px;
 }
 /* =============== 
-SKILLS Section
+      SKILLS Section
 ===============
 */
- .skill .container{
+.skill .container{
   background-color: var(--clr-primary-7);
   padding: 60px 0;
   text-align: center;
-  
 }
 
 .skill h2 {
@@ -383,7 +389,7 @@ SKILLS Section
 .skill .boxes {
   display: flex;
   justify-content: space-between;
-  max-width: 1900px;
+  
 }
 .skill .boxes .tools {
   width: 90px;
@@ -406,4 +412,59 @@ SKILLS Section
   line-height: 27px;
 }
 
+/* =============== 
+      SCROLL BAR 
+=================
+*/
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#scrollPath {
+  position: fixed;
+  top:0;
+  right:0;
+  width: 0.7em;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#progressbar {
+  position: fixed;
+  top:0;
+  right:0;
+  width: 0.7em;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+
+  animation: animate 5s linear infinite;
+}
+#progressbar:before {
+  content: '';
+  position: fixed;
+  top:0;
+  right:0;
+  width: 0.7em;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter:blur(10px);
+}
+#progressbar:after {
+  content: '';
+  position: fixed;
+  top:0;
+  right:0;
+  width: 0.7em;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter:blur(10px);
+}
+
+@keyframes animate {
+   0%, 100% {
+     filter: hue-rotate(0deg);
+   }
+   50% {
+     filter: hue-rotate(360deg);
+   }
+}
