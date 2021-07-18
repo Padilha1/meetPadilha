@@ -42,9 +42,6 @@
     --fixed-width: 620px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 *,
 ::after,
 ::before {
@@ -54,6 +51,7 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
     font-family: var(--ff-secondary);
     color: var(--clr-grey-1);
     line-height: 1.5;
@@ -176,6 +174,14 @@ nav {
     display: flex;
     flex-direction: column;
   }
+
+  .contact .head {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .head .info {
+    margin: 1rem;
+  }
 }
 
 /* =============== 
@@ -266,7 +272,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.815);
   z-index: -1;
 }
 
@@ -467,4 +473,58 @@ ABOUT Section
    50% {
      filter: hue-rotate(360deg);
    }
+}
+
+/* =============== 
+      CONTACT
+=================
+*/
+.contact {
+  padding: 100px 0;
+  background-image: url(imgs/KeyboardBG.jpg);
+  background-size: cover;
+}
+
+
+.contact .head {
+  background-color: #191919;
+  padding: 40px 90px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact .head .info {
+  display: flex;
+  align-items: center;
+}
+
+.info .fa-business-time,
+.fa-map-marker-alt,
+.fa-mobile-alt,
+.fa-envelope-open
+{
+ font-size: 1.5rem;
+ color: var(--clr-grey-4);
+}
+
+.contact .head .info .text span {
+  display: block;
+  font-size: 1rem;
+}
+
+.contact .head .info .text span:first-child {
+  color: rgb(161, 161, 161);
+}
+
+.contact .head .info .text span:last-child {
+  color: var(--clr-white);
+}
+
+.contact .map {
+  display: flex;
+  width: 100%;
+}
+.contact .map iframe {
+  width: 100%;
 }
