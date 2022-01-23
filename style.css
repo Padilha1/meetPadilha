@@ -31,6 +31,8 @@
     --clr-red-dark: hsl(360, 67%, 44%);
     --clr-red-light: hsl(360, 71%, 66%);
     --clr-black: #222;
+    --clr-black-light: rgb(151, 151, 151);
+    
     --ff-primary: 'Roboto', sans-serif;
     --ff-secondary: 'Open Sans', sans-serif;
     --transition: all 0.3s linear;
@@ -52,17 +54,17 @@
 
 body {
   scroll-behavior: smooth;
-    font-family: var(--ff-secondary);
-    color: var(--clr-grey-1);
-    line-height: 1.5;
-    font-size: 0.875rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
 
 /***************************
         NAVBAR
 ***************************/
 nav {
-    background: var(--clr-primary-7);
+    background-image: linear-gradient(rgb(171, 151, 180), rgb(204, 177, 218));
     box-shadow: var(--light-shadow);
   }
   .nav-header {
@@ -85,10 +87,11 @@ nav {
     transform: rotate(90deg);
   }
   .logo {
-    height: 40px;
+    height: 4rem;
+    border-radius: 40%;
   }
   .links a {
-    color: var(--clr-grey-3);
+    color: var(--clr-primary-5);
     font-size: 1rem;
     text-transform: capitalize;
     text-decoration: none;
@@ -99,13 +102,20 @@ nav {
   }
   .links a:hover {
     background: var(--clr-primary-8);
-    color: var(--clr-primary-5);
+    color: var(--clr-primary-1);
     padding-left: 1.5rem;
   }
   .social-icons {
     display: none;
     list-style: none;
+    font-size: 1.3rem;
   }
+  .social-icons li a:hover{
+    color: var(--clr-primary-1)
+  }
+  /* .show-icons{
+    height: 5rem;
+  } */
   .links {
     height: 0;
     overflow: hidden;
@@ -162,6 +172,29 @@ nav {
 }
 
 @media  screen and (max-width: 375px) {
+  .about .mini-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill {
+    overflow: auto;
+  }
+  .skill .boxes{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact .head {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .head .info {
+    margin: 1rem;
+  }
+}
+
+@media  screen and (max-width: 390px) {
   .about .mini-container{
     display: flex;
     flex-direction: column;
@@ -287,12 +320,11 @@ ABOUT Section
 .container .mini-container{
   display: flex;
   font-size: 15px;
+  
 }
 .container .timing{
-  background-image: url(imgs/blue-orange.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding:40px 20px;
+  background-image: linear-gradient(var(--clr-primary-5), var(--clr-black));
+  padding:2rem 1rem;
   
   text-align: center;
   color:white;
@@ -327,11 +359,8 @@ ABOUT Section
 }
 
 .container .experience {
-  background-image: url(imgs/background5.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--clr-primary-6), var(--clr-primary-8));
   color:white;
-
 
   min-width: 375px;
   max-width: 100%;
@@ -441,7 +470,7 @@ ABOUT Section
   top:0;
   right:0;
   width: 0.7em;
-  background: linear-gradient(to top, #008aff, #00ffe7);
+  background: linear-gradient(to bottom, #008aff, #00ffe7);
 
   animation: animate 5s linear infinite;
 }
@@ -484,7 +513,6 @@ ABOUT Section
   background-image: url(imgs/KeyboardBG.jpg);
   background-size: cover;
 }
-
 
 .contact .head {
   background-color: #191919;

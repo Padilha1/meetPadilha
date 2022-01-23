@@ -9,11 +9,11 @@
 //  NAVBAR FUNCTION
 const navToggle = document.querySelector(".nav-toggle");
 const links = document.querySelector(".links");
-// const icons = document.querySelector(".social-icons");
+// const icons = document.querySelector(".social-icons")
 
 navToggle.addEventListener("click", function(){
     links.classList.toggle("show-links");
-    // icons.classList.toggle("show-links");
+    // icons.classList.toggle("show-icons");
 });
 
 // VIDEO FUNCTION
@@ -33,9 +33,9 @@ btn.addEventListener("click", function(){
         video.play();
     }
 });
-
 // VIDEO VOLUME
-video.volume = 0.1;
+video.volume = 0.08;
+
 
 // PRE LOADER
 const preloader = document.querySelector(".preloader");
